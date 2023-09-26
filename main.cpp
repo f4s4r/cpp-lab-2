@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 using namespace std;
 
 long double db_fac(int x){
@@ -12,7 +13,7 @@ long double db_fac(int x){
 
 
 long double t(long double x){
-    double first_sum, second_sum;
+    long double first_sum = 0, second_sum = 0;
     for (int k = 0; k <= 10; ++k){
         first_sum += (pow(x, 2 * k + 1)) / (db_fac(2 * k + 1));
     }
@@ -29,6 +30,9 @@ long double fst_func(long double y){
 
 
 int main(){
-    cout << fst_func(1);
+    long double numb;
+    cout << "Введите число: ";
+    cin >> numb;
+    cout << fixed << setprecision(10) << fst_func(numb);
     return 0;
 }
